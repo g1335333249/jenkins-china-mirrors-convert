@@ -3,6 +3,7 @@ PROJECT_NAME=jenkins-china-mirrors-convert
 PROJECT_VERSION=1.0.0-SNAPSHOT
 BASE_DIR=$(dirname "$PWD")
 cd $BASE_DIR
+mvn clean package
 mvn docker:build
 docker stop $PROJECT_NAME
 docker rm $PROJECT_NAME
